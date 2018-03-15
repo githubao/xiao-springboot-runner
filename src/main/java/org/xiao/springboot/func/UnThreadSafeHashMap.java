@@ -34,18 +34,19 @@ public class UnThreadSafeHashMap {
     private final Object lock = new Object();
 
     private static final int POOL_SIZE = 5;
-    private static final int MAX_NUM = 100000;
+//    private static final int MAX_NUM = 100000;
+    private static final int MAX_NUM = 100;
 
-    private Map<String, Integer> hashtable = new Hashtable<>();
+    private Map<String, Integer> hashTable = new Hashtable<>();
     private Map<String, Integer> normalHashMap = new HashMap<>();
     private Map<String, Integer> concurrentHashMap = new ConcurrentHashMap<>();
     private Map<String, Integer> synchronizedMap = Collections.synchronizedMap(new HashMap<>());
 
     public void run() {
-        runSingle(hashtable);
+//        runSingle(hashTable);
         runSingle(normalHashMap);
-        runSingle(concurrentHashMap);
-        runSingle(synchronizedMap);
+//        runSingle(concurrentHashMap);
+//        runSingle(synchronizedMap);
     }
 
     private void runSingle(Map<String, Integer> map) {
@@ -70,19 +71,19 @@ public class UnThreadSafeHashMap {
 
         }
 
-//        while (true) {
-//            try {
-//                Thread.sleep(10);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//
-//            if (future.isDone()) {
-//                executors.shutdown();
-////                System.out.println("task down");
-//                break;
-//            }
-//        }
+        while (true) {
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            if (future.isDone()) {
+                executors.shutdown();
+//                System.out.println("task down");
+                break;
+            }
+        }
 
         try {
             executors.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
