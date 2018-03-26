@@ -1,4 +1,4 @@
-package org.xiao.springboot.func;
+package org.xiao.springboot.lang;
 
 import java.util.Collections;
 import java.util.HashMap;

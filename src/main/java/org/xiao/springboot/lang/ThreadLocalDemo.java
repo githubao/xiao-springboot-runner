@@ -1,6 +1,4 @@
-package org.xiao.springboot.func;
-
-import java.util.ArrayList;
+package org.xiao.springboot.lang;
 
 /**
  * 学习threadlocal
