@@ -1,5 +1,7 @@
 package org.xiao.springboot.explore;
 
+import org.springframework.transaction.annotation.Transactional;
+
 /**
  * 类似 foo bar的无意义的代码
  *
@@ -8,6 +10,10 @@ package org.xiao.springboot.explore;
  * date: 2018/4/2 17:35
  */
 
-@Trasactional
 public class Quake {
+
+    @Transactional
+    public void quake() {
+
+    }
 }
