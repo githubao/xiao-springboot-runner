@@ -32,7 +32,7 @@ public class UserController {
 
     @GetMapping("/{id}.html")
     public ModelAndView getUser(@PathVariable Long id, ModelAndView view) {
-        Integer.parseInt("sd");
+//        Integer.parseInt("sd");
 
         User user = userService.getUser(id);
         view.addObject(user);
