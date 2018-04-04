@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * date: 2018/4/3 20:40
  */
 
-@Controller
+//@Controller
 public class ErrorController extends AbstractErrorController {
 
     public ErrorController() {

@@ -1,0 +1,33 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "示例",
+    "version": "1.0",
+    "title": "某系统接口"
+  },
+  "basePath": "/api/v1",
+  "consumers": [
+    "application/x-www-form-urlencode"
+  ],
+  "paths": {
+    "/hello": {
+      "get": {
+        "summary": "问候",
+        "description": "问候示例",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "姓名",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "获取用户名称成功"
+          }
+        }
+      }
+    }
+  }
+}
